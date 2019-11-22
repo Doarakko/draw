@@ -14,7 +14,7 @@ $ go get github.com/Doarakko/draw
 $ draw
 ```
 
-![](https://storage.googleapis.com/ygoprodeck.com/pics_small/46986414.jpg)
+![](sample.png)
 
 ## Credits
 
