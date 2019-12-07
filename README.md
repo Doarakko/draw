@@ -2,10 +2,10 @@
 
 Draw Yu-Gi-Oh! Card.
 
-## Installation
+## Install
 
 ```
-$ go get github.com/Doarakko/draw
+$ go get -u github.com/Doarakko/draw
 ```
 
 ## Usage
