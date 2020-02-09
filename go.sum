@@ -1,0 +1,10 @@
+github.com/Doarakko/go-yugioh v0.0.0-20200111171350-17f7acb480f7 h1:yRlcwo1EhA9ocELBwlNHmPKnFKcsghMoeC8QfN6nt7A=
+github.com/Doarakko/go-yugioh v0.0.0-20200111171350-17f7acb480f7/go.mod h1:XWR6yaewz9/T/IgVeJB3ESrLJRKgVL0OBkWF62y9S9c=
+github.com/google/go-querystring v1.0.0 h1:Xkwi/a1rcvNg1PPYe5vI8GbeBY/jrVuDX5ASuANWTrk=
+github.com/google/go-querystring v1.0.0/go.mod h1:odCYkC5MyYFN7vkCjXpyrEuKhc/BUO6wN/zVPAxq5ck=
+github.com/mattn/go-sixel v0.0.1 h1:rhJSpux2xjsmXdXqY694uiEC0Rwxt6jYoq7Bahqo2xs=
+github.com/mattn/go-sixel v0.0.1/go.mod h1:zlzhYSuMbLdRdrxfutExxGpC+Pf2uUTJ6GpVQ4LB5dc=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646/go.mod h1:jpp1/29i3P1S/RLdc7JQKbRpFeM1dOBd8T9ki5s+AY8=
+github.com/soniakeys/quant v1.0.0 h1:N1um9ktjbkZVcywBVAAYpZYSHxEfJGzshHCxx/DaI0Y=
+github.com/soniakeys/quant v1.0.0/go.mod h1:HI1k023QuVbD4H8i9YdfZP2munIHU4QpjsImz6Y6zds=
