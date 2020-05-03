@@ -14,7 +14,7 @@ $ go get -u github.com/Doarakko/draw
 $ draw
 ```
 
-![](sample.png)
+![](sample.gif)
 
 ## Credits
 
