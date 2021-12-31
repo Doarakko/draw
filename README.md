@@ -5,13 +5,13 @@ Draw Yu-Gi-Oh! Card.
 ## Install
 
 ```
-$ go get -u github.com/Doarakko/draw
+go install github.com/Doarakko/draw@latest
 ```
 
 ## Usage
 
 ```
-$ draw
+draw
 ```
 
 ![](sample.gif)
@@ -19,8 +19,7 @@ $ draw
 ## Credits
 
 - [Yu-Gi-Oh! API by YGOPRODeck](https://db.ygoprodeck.com/api-guide/)
-- [mattn](https://github.com/mattn)
-  - [nyanko](https://github.com/mattn/nyanko)
+- [nyanko](https://github.com/mattn/nyanko)
 
 ## License
 
