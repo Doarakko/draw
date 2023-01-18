@@ -14,7 +14,6 @@ import (
 
 	"github.com/Doarakko/go-yugioh/yugioh"
 	"github.com/mattn/go-sixel"
-	"github.com/nfnt/resize"
 )
 
 func main() {
@@ -41,7 +40,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	img = resize.Resize(300, 0, img, resize.Lanczos3)
 	err = sixel.NewEncoder(os.Stdout).Encode(img)
 	if err != nil {
 		log.Fatal(err)
