@@ -1,28 +1,77 @@
-name: release
+name: Release
 
 on:
   push:
     tags:
-      - "v*"
+      - 'v*'
+
+permissions:
+  contents: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+  build:
+    strategy:
+      matrix:
+        include:
+          - target: darwin-amd64
+            os: macos-latest
+            goos: darwin
+            goarch: amd64
+            name: draw-x86_64-apple-darwin
+          - target: darwin-arm64
+            os: macos-latest
+            goos: darwin
+            goarch: arm64
+            name: draw-aarch64-apple-darwin
+          - target: linux-amd64
+            os: ubuntu-latest
+            goos: linux
+            goarch: amd64
+            name: draw-x86_64-unknown-linux-gnu
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - uses: actions/setup-go@v5
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
           cache: true
 
-      - uses: goreleaser/goreleaser-action@v6
+      - name: Build
+        run: |
+          CGO_ENABLED=0 GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o draw .
+
+      - name: Package
+        run: |
+          mkdir -p dist
+          cp draw dist/
+          cd dist
+          tar -czvf ${{ matrix.name }}.tar.gz draw
+          shasum -a 256 ${{ matrix.name }}.tar.gz > ${{ matrix.name }}.tar.gz.sha256
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          args: release --rm-dist
+          name: ${{ matrix.name }}
+          path: dist/${{ matrix.name }}.tar.gz*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create Release and Upload Assets
+        run: gh release create ${{ github.ref_name }} artifacts/* --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HOMEBREW_TAP_GITHUB_TOKEN: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
