@@ -16,8 +16,7 @@ go install github.com/Doarakko/draw@latest
 Homebrew
 
 ```sh
-brew tap Doarakko/homebrew-tap
-brew install draw
+brew install Doarakko/tap/draw
 ```
 
 ## Usage
