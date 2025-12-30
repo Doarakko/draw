@@ -7,8 +7,17 @@ Draw Yu-Gi-Oh! Card.
 
 ## Install
 
-```
+go
+
+```sh
 go install github.com/Doarakko/draw@latest
+```
+
+Homebrew
+
+```sh
+brew tap Doarakko/homebrew-tap
+brew install draw
 ```
 
 ## Usage
@@ -23,6 +32,17 @@ draw
 
 - [Yu-Gi-Oh! API by YGOPRODeck](https://db.ygoprodeck.com/api-guide/)
 - [nyanko](https://github.com/mattn/nyanko)
+
+## Release
+
+```sh
+# 1. Create and push tag
+git tag v0.1.0
+git push origin v0.1.0
+
+# 2. Update homebrew-tap
+./scripts/update-homebrew.sh 0.1.0
+```
 
 ## License
 
